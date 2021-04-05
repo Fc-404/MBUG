@@ -229,25 +229,25 @@
         // 操作状态，0为登录，1为注册
         state: 0,
         // 登录相关元素
-        logup       : document.getElementById('logup'),
-        login       : document.getElementById('login'),
-        interface   : document.getElementById('interface'),
-        faceLogup   : document.getElementById('faceLogup'),
-        faceLogin   : document.getElementById('faceLogin'),
+        logup: document.getElementById('logup'),
+        login: document.getElementById('login'),
+        interface: document.getElementById('interface'),
+        faceLogup: document.getElementById('faceLogup'),
+        faceLogin: document.getElementById('faceLogin'),
         logSelectBar: document.getElementById('logSelectBar'),
-        forget      : document.getElementById('forget'),
-        whatCode    : document.getElementById('whatCode'),
-        logupSubmit : document.getElementById('logupSubmit'),
-        loginSubmit : document.getElementById('loginSubmit'),
-        formLogup   : document.getElementsByName('formLogup')[0],
-        formLogin   : document.getElementsByName('formLogin')[0],
+        forget: document.getElementById('forget'),
+        whatCode: document.getElementById('whatCode'),
+        logupSubmit: document.getElementById('logupSubmit'),
+        loginSubmit: document.getElementById('loginSubmit'),
+        formLogup: document.getElementsByName('formLogup')[0],
+        formLogin: document.getElementsByName('formLogin')[0],
         // AJAX对象
-        ajaxObj: window.XMLHttpRequest ? new XMLHttpRequest: new ActiveXObject('Microsoft.XMLHTTP'),
+        ajaxObj = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP'),
 
         /**
          * * 方法
          */
-        logupRequest: function () {
+        logupRequest = function () {
             console.log(this);
         }
     }
@@ -276,7 +276,6 @@
             return false;
         }
         log.logupRequest();
-        return false;
     }
     log.loginSubmit.onclick = function () {
         const m = log.formLogin;

@@ -8,75 +8,74 @@
 
 <style>
     * {
-        margin: 0;
+        margin : 0;
         padding: 0;
         outline: none;
     }
 
     body,
     html {
-        width: 100%;
-        height: 100%;
+        width     : 100%;
+        height    : 100%;
         min-height: 500px;
     }
 
     body {
-        --background-image: linear-gradient(135deg, #90F7EC 10%, #32CCBC 100%);
-        background-image: url(./img/节气1.png);
-        background-repeat: no-repeat;
+        --background-image : linear-gradient(135deg, #90F7EC 10%, #32CCBC 100%);
+        background-image   : url(./img/节气1.png);
+        background-repeat  : no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size    : contain;
     }
 
     #box {
-        width: 300px;
-        height: 400px;
-        margin: 0 50%;
+        width  : 300px;
+        height : 400px;
+        margin : 0 50%;
         padding: 50px 100px;
     }
 
     #log {
-        width: 300px;
-        height: 400px;
-        display: inline-block;
+        width           : 300px;
+        height          : 400px;
+        display         : inline-block;
         background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 8px 8px rgba(10, 16, 20, .24), 0 0 8px rgba(10, 16, 20, .12);
-        overflow: hidden;
+        border-radius   : 12px;
+        box-shadow      : 0 8px 8px rgba(10, 16, 20, .24), 0 0 8px rgba(10, 16, 20, .12);
+        overflow        : hidden;
     }
 
     #logSelect {
-        width: 100%;
-        height: 68px;
+        width        : 100%;
+        height       : 68px;
         border-bottom: 2px #dedddc solid;
-        position: relative;
+        position     : relative;
     }
 
     #logSelectBar {
-        height: 2px;
-        width: 300px;
+        height  : 2px;
+        width   : 300px;
         position: absolute;
-        bottom: -2px;
+        bottom  : -2px;
     }
-
     #logSelectBar div:first-child {
-        width: 50%;
+        width        : 50%;
         border-bottom: 2px #0396FF solid;
     }
 
     #write {
-        width: 100%;
+        width : 100%;
         height: 330px;
     }
 
     #logup,
     #login {
-        width: 150px;
-        height: calc(100% + 2px);
-        display: inline-block;
-        text-align: center;
-        font-size: 20px;
-        color: #5e5e5e;
+        width      : 150px;
+        height     : calc(100% + 2px);
+        display    : inline-block;
+        text-align : center;
+        font-size  : 20px;
+        color      : #5e5e5e;
         line-height: 68px;
         user-select: none;
     }
@@ -84,13 +83,13 @@
     #logup:hover,
     #login:hover {
         background-color: #ABDCFF;
-        transition: 0.2s all;
+        transition      : 0.2s all;
     }
 
     #logup:active,
     #login:active {
         background-color: #0396FF;
-        color: #e5e5e5;
+        color           : #e5e5e5;
     }
 
     #logup {
@@ -102,73 +101,66 @@
     }
 
     .logBarAnim {
-        transform: rotateY(0deg);
+        transform : rotateY(0deg);
         transition: ease all .5s;
     }
 
     #interface {
-        width: 300px;
-        height: 330px;
+        width   : 300px;
+        height  : 330px;
         position: relative;
     }
 
     .logHit {
-        font-size: 20px;
-        color: #5e5e5e;
+        font-size  : 20px;
+        color      : #5e5e5e;
         margin-left: 20px;
         user-select: none;
     }
-
     .inputEl {
-        height: 30px;
-        width: 50%;
+        height       : 30px;
+        width        : 50%;
         border-radius: 12px;
-        border: 2px solid #dedddc;
-        padding: 0 12px;
-        margin-top: 50px;
-        color: #5e5e5e;
+        border       : 2px solid #dedddc;
+        padding      : 0 12px;
+        margin-top   : 50px;
+        color        : #5e5e5e;
     }
-
     .logEnter {
-        margin-top: 50px;
-        width: 150px;
-        height: 40px;
-        margin-left: calc(50% - 75px);
-        font-size: 22px;
-        border-radius: 12px;
-        border: none;
+        margin-top      : 50px;
+        width           : 150px;
+        height          : 40px;
+        margin-left     : calc(50% - 75px);
+        font-size       : 22px;
+        border-radius   : 12px;
+        border          : none;
         background-color: #0396FF;
-        color: white;
-        transition: all 0.2s;
+        color           : white;
+        transition      : all 0.2s;
     }
-
     .logEnter:hover {
         background-color: #ABDCFF;
-        transition: all 0.2s;
+        transition      : all 0.2s;
     }
 
-    #forget,
-    #whatCode {
-        font-size: 12px;
+    #forget, #whatCode {
+        font-size      : 12px;
         text-decoration: none;
-        display: block;
-        margin: 20px auto;
-        text-align: center;
+        display        : block;
+        margin         : 20px auto;
+        text-align     : center;
     }
-
     #faceLogin {
         position: absolute;
-        top: 0;
-        left: 100%;
-        width: 100%;
-        height: 100px;
+        top     : 0;
+        left    : 100%;
+        width   : 100%;
+        height  : 100px;
     }
-
     .logFaceAnim {
         transition: ease all 0.5s;
-        transform: translateX(0);
+        transform : translateX(0);
     }
-
     #faceLogin input {
         margin-top: 20px;
     }
@@ -200,8 +192,7 @@
                 <div id="faceLogin">
                     <form name="formLogin" method="POST">
                         <span class="logHit">姓名：</span>
-                        <input type="text" name="name" class="inputEl" style="margin-top: 40px;" maxlength="16"
-                            minlength="2">
+                        <input type="text" name="name" class="inputEl" style="margin-top: 40px;" maxlength="16" minlength="2">
                         <br><span class="logHit">密码：</span>
                         <input type="password" name="pswd" class="inputEl" maxlength="16" minlength="6">
                         <br><span class="logHit">信牌：</span>
@@ -224,7 +215,7 @@
 
     const log = {
         /**
-         * * 属性
+         * ? 属性
          */
         // 操作状态，0为登录，1为注册
         state: 0,
@@ -242,50 +233,46 @@
         formLogup   : document.getElementsByName('formLogup')[0],
         formLogin   : document.getElementsByName('formLogin')[0],
         // AJAX对象
-        ajaxObj: window.XMLHttpRequest ? new XMLHttpRequest: new ActiveXObject('Microsoft.XMLHTTP'),
+        ajaxObj = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP'),
 
         /**
-         * * 方法
+         * 方法
          */
-        logupRequest: function () {
-            console.log(this);
-        }
     }
 
-    log.logup.onclick = function () {
-        log.state = 0;
+    log.logup.onclick = function() {
+        log.state                        = 0;
         log.logSelectBar.style.transform = 'rotateY(0deg)';
-        log.interface.style.transform = 'translateX(0)';
+        log.interface.style.transform    = 'translateX(0)';
     }
-    log.login.onclick = function () {
-        log.state = 1;
+    log.login.onclick = function() {
+        log.state                        = 1;
         log.logSelectBar.style.transform = 'rotateY(180deg)';
-        log.interface.style.transform = 'translateX(-100%)';
+        log.interface.style.transform    = 'translateX(-100%)';
     }
-    log.forget.onclick = function () {
+    log.forget.onclick = function() {
         alert('\n请联系管理员重置密码\n')
     }
-    log.whatCode.onclick = function () {
+    log.whatCode.onclick = function() {
         alert('\n信牌是用于注册验证的代码\n防止恶意人员注册\n请向项目管理员获取信牌\n')
     }
-    log.logupSubmit.onclick = function () {
+    log.logupSubmit.onclick = function() {
         const m = log.formLogup;
         if (m.name.value == ''
             || m.pswd.value == '') {
-            alert('\n姓名、密码不能为空\n');
-            return false;
-        }
-        log.logupRequest();
-        return false;
+                alert('\n姓名、密码不能为空\n');
+                return false;
+            }
+        
     }
-    log.loginSubmit.onclick = function () {
+    log.loginSubmit.onclick = function() {
         const m = log.formLogin;
         if (m.name.value == ''
             || m.pswd.value == ''
             || m.code.value == '') {
-            alert('\n姓名、密码、信牌不能为空\n');
-            return false;
-        }
+                alert('\n姓名、密码、信牌不能为空\n');
+                return false;
+            }
         return false;
     }
 </script>

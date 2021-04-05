@@ -242,12 +242,12 @@
         formLogup   : document.getElementsByName('formLogup')[0],
         formLogin   : document.getElementsByName('formLogin')[0],
         // AJAX对象
-        ajaxObj: window.XMLHttpRequest ? new XMLHttpRequest: new ActiveXObject('Microsoft.XMLHTTP'),
+        ajaxObj = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP'),
 
         /**
          * * 方法
          */
-        logupRequest: function () {
+        logupRequest = function () {
             console.log(this);
         }
     }
@@ -276,7 +276,6 @@
             return false;
         }
         log.logupRequest();
-        return false;
     }
     log.loginSubmit.onclick = function () {
         const m = log.formLogin;
