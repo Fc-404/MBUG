@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script type="text/javascript" src="../js/fun/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <runoob></runoob>
+        <runoob ref="a"></runoob>
+    </div>
+
+    <script>
+        var Child = {
+            data: function () {
+                return {
+                    name: 'wo'
+                }
+            },
+            template: '<h1>{{ name }}</h1>'
+        }
+
+        // 创建根实例
+        new Vue({
+            el: '#app',
+            components: {
+                // <runoob> 将只在父模板可用
+                'runoob': Child
+            },
+            methods: {
+                b: function () { this.$refs.a.name = 'you' }
+            }
+        }).b();
+    </script>
+</body>
+
+</html>

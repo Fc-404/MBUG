@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>MBUG</title>
+    <link rel="stylesheet" href="../css/page.css">
+</head>
+
+<body id="page">
+    <div id="bars">
+        <div id="icon"><img src="../img/icon.svg">
+            <p>MBUG<br>BUG管理系统</p>
+        </div>
+        <bar v-for="item in items" :info="item"></bar>
+    </div>
+    <div id="body"></div>
+</body>
+
+<!--模板-->
+<template id="barItem">
+    <div :class='{bar: true,
+         barCurrent: info.id == barInfo.activeWho ? true : false
+         }'
+         @click='barInfo.activeWho = info.id'>
+        {{ info.name }}
+    </div>
+</template>
+
+<script type="text/javascript" src="../js/fun/vue.js"></script>
+<script type="text/javascript" src="../js/page.js"></script>
+
+</html>
