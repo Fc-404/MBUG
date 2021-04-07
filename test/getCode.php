@@ -10,6 +10,6 @@ $dbObj = new DBOP(DB::create());
  */
 $userLength = $dbObj->R_userLength();
 $code = substr(md5($userLength), 0, 8);
-//echo $code;
-echo md5('123123');
+echo $code;
+//echo md5('123123');
 ?>

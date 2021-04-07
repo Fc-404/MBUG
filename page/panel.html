@@ -12,7 +12,8 @@
         <div id="icon"><img src="../img/icon.svg">
             <p>MBUG<br>BUG管理系统</p>
         </div>
-        <bar v-for="item in items" :info="item"></bar>
+        <bar v-if="userInfo.senior || !item.senior" v-for="item in items" :info="item"></bar>
+        <div id="mine"></div>
     </div>
     <div id="body"></div>
 </body>
@@ -23,7 +24,8 @@
          barCurrent: info.id == barInfo.activeWho ? true : false
          }'
          @click='barInfo.activeWho = info.id'>
-        {{ info.name }}
+        <img :src='"../img/" + info.icon'>
+        <span>{{ info.name }}</span>
     </div>
 </template>
 
