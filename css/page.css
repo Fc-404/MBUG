@@ -1,11 +1,18 @@
 /*
 * page主页面样式表
 */
+@font-face {
+    font-family: "default";
+    src: url(../font/GenJyuuGothicX-Normal.woff2);
+}
 
 * {
     margin: 0;
     padding: 0;
     user-select: none;
+    font-family: "default";
+    font-size: 16px;
+    color: #25262b;
 }
 
 html, body {
@@ -82,4 +89,39 @@ body {
     top: calc(100% - 100px);
     bottom: 0;
     background-color: #ececee;
+}
+#mine img {
+    width: 30px;
+}
+#userName {
+    vertical-align: super;
+}
+#logout {
+    float: right;
+    color: tomato;
+    padding: 3px;
+    border-radius: 3px;
+}
+#logout:hover {
+    color: white;
+    background-color: tomato;
+}
+#jobName {
+    position: absolute;
+    bottom: 12px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+/*
+* 内容栏
+*/
+.items {
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    padding: 20px;
+    overflow: auto;
 }

@@ -5,20 +5,55 @@
     <meta charset="utf-8">
     <title>MBUG</title>
     <link rel="stylesheet" href="../css/page.css">
+    <script type="text/javascript" src="../js/fun/vue.js"></script>
+    <script type="text/javascript" src="../js/fun/GetCooKie.js"></script>
 </head>
 
-<body id="page">
+<body>
     <div id="bars">
         <div id="icon"><img src="../img/icon.svg">
             <p>MBUG<br>BUG管理系统</p>
         </div>
         <bar v-if="userInfo.senior || !item.senior" v-for="item in items" :info="item"></bar>
-        <div id="mine"></div>
+        <div id="mine">
+            <div style="height: 12px;"></div>
+            <div :class="{bar: true, barCurrent: activeWho == -1}" @click="activeWho = -1">
+                <img src="../img/user.svg">
+                <span id="userName">{{ userInfo.name }}</span>
+                <span id="logout" @click="logout">注销</span>
+            </div>
+            <p id="jobName">{{ userInfo.department + ' / ' + userInfo.job }}</p>
+        </div>
     </div>
-    <div id="body"></div>
+    <div id="body">
+        <div id="setUser" class="items" v-show="barInfo.activeWho == -1">
+            mine
+        </div>
+        <div id="allBUG" class="items" v-show="barInfo.activeWho == 0">
+            {{ barInfo.items[0].name }}
+        </div>
+        <div id="upBUG" class="items" v-show="barInfo.activeWho == 1">
+            {{ barInfo.items[1].name }}
+        </div>
+        <div id="KPI" class="items" v-show="barInfo.activeWho == 2">
+            {{ barInfo.items[2].name }}
+        </div>
+        <div id="setPoject" class="items" v-if="userInfo.senior" v-show="barInfo.activeWho == 3">
+            {{ barInfo.items[3].name }}
+        </div>
+        <div id="setEnvironment" class="items" v-if="userInfo.senior" v-show="barInfo.activeWho == 4">
+            {{ barInfo.items[4].name }}
+        </div>
+        <div id="setDepartment" class="items" v-if="userInfo.senior" v-show="barInfo.activeWho == 5">
+            {{ barInfo.items[5].name }}
+        </div>
+        <div id="setClerk" class="items" v-if="userInfo.senior" v-show="barInfo.activeWho == 6">
+            {{ barInfo.items[6].name }}
+        </div>
+    </div>
 </body>
 
-<!--模板-->
+<!--选项栏模板-->
 <template id="barItem">
     <div :class='{bar: true,
          barCurrent: info.id == barInfo.activeWho ? true : false
@@ -29,7 +64,6 @@
     </div>
 </template>
 
-<script type="text/javascript" src="../js/fun/vue.js"></script>
 <script type="text/javascript" src="../js/page.js"></script>
 
 </html>

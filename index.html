@@ -7,77 +7,83 @@
 </head>
 
 <style>
+    @font-face {
+        font-family: "default";
+        src: url(./font/GenJyuuGothicX-Normal.woff2);
+    }
+
     * {
-        margin : 0;
+        margin: 0;
         padding: 0;
         outline: none;
+        font-family: "default";
     }
 
     body,
     html {
-        width     : 100%;
-        height    : 100%;
+        width: 100%;
+        height: 100%;
         min-height: 500px;
     }
 
     body {
-        --background-image : linear-gradient(135deg, #90F7EC 10%, #32CCBC 100%);
-        background-image   : url(./img/节气1.png);
-        background-repeat  : no-repeat;
+        --background-image: linear-gradient(135deg, #90F7EC 10%, #32CCBC 100%);
+        background-image: url(./img/节气1.png);
+        background-repeat: no-repeat;
         background-position: center;
-        background-size    : contain;
+        background-size: contain;
     }
 
     #box {
-        width  : 300px;
-        height : 400px;
-        margin : 0 50%;
+        width: 300px;
+        height: 400px;
+        margin: 0 50%;
         padding: 50px 100px;
     }
 
     #log {
-        width           : 300px;
-        height          : 400px;
-        display         : inline-block;
-        background-color: rgba(255,255,255,0.6);
-        backdrop-filter : blur(64px);
-        border-radius   : 12px;
-        box-shadow      : 0 8px 8px rgba(10, 16, 20, .24), 0 0 8px rgba(10, 16, 20, .12);
-        overflow        : hidden;
+        width: 300px;
+        height: 400px;
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(64px);
+        border-radius: 12px;
+        box-shadow: 0 8px 8px rgba(10, 16, 20, .24), 0 0 8px rgba(10, 16, 20, .12);
+        overflow: hidden;
     }
 
     #logSelect {
-        width        : 100%;
-        height       : 68px;
+        width: 100%;
+        height: 68px;
         border-bottom: 2px #dedddc solid;
-        position     : relative;
+        position: relative;
     }
 
     #logSelectBar {
-        height  : 2px;
-        width   : 300px;
+        height: 2px;
+        width: 300px;
         position: absolute;
-        bottom  : -2px;
+        bottom: -2px;
     }
 
     #logSelectBar div:first-child {
-        width        : 50%;
+        width: 50%;
         border-bottom: 2px #0396FF solid;
     }
 
     #write {
-        width : 100%;
+        width: 100%;
         height: 330px;
     }
 
     #logup,
     #login {
-        width      : 150px;
-        height     : calc(100% + 2px);
-        display    : inline-block;
-        text-align : center;
-        font-size  : 20px;
-        color      : #5e5e5e;
+        width: 150px;
+        height: calc(100% + 2px);
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        color: #5e5e5e;
         line-height: 68px;
         user-select: none;
     }
@@ -85,13 +91,13 @@
     #logup:hover,
     #login:hover {
         background-color: #ABDCFF;
-        transition      : 0.2s all;
+        transition: 0.2s all;
     }
 
     #logup:active,
     #login:active {
         background-color: #0396FF;
-        color           : #e5e5e5;
+        color: #e5e5e5;
     }
 
     #logup {
@@ -103,71 +109,71 @@
     }
 
     .logBarAnim {
-        transform : rotateY(0deg);
+        transform: rotateY(0deg);
         transition: ease all .5s;
     }
 
     #interface {
-        width   : 300px;
-        height  : 330px;
+        width: 300px;
+        height: 330px;
         position: relative;
     }
 
     .logHit {
-        font-size  : 20px;
-        color      : #5e5e5e;
+        font-size: 20px;
+        color: #5e5e5e;
         margin-left: 20px;
         user-select: none;
     }
 
     .inputEl {
-        height       : 30px;
-        width        : 50%;
+        height: 30px;
+        width: 50%;
         border-radius: 12px;
-        border       : 2px solid #dedddc;
-        padding      : 0 12px;
-        margin-top   : 50px;
-        color        : #5e5e5e;
+        border: 2px solid #dedddc;
+        padding: 0 12px;
+        margin-top: 50px;
+        color: #5e5e5e;
     }
 
     .logEnter {
-        margin-top      : 50px;
-        width           : 150px;
-        height          : 40px;
-        margin-left     : calc(50% - 75px);
-        font-size       : 22px;
-        border-radius   : 12px;
-        border          : none;
+        margin-top: 50px;
+        width: 150px;
+        height: 40px;
+        margin-left: calc(50% - 75px);
+        font-size: 22px;
+        border-radius: 12px;
+        border: none;
         background-color: #0396FF;
-        color           : white;
-        transition      : all 0.2s;
+        color: white;
+        transition: all 0.2s;
     }
 
     .logEnter:hover {
         background-color: #ABDCFF;
-        transition      : all 0.2s;
+        transition: all 0.2s;
     }
 
     #forget,
     #whatCode {
-        font-size      : 12px;
+        font-size: 12px;
         text-decoration: none;
-        display        : block;
-        margin         : 20px auto;
-        text-align     : center;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
     }
 
     #faceLogin {
         position: absolute;
-        top     : 0;
-        left    : 100%;
-        width   : 100%;
-        height  : 100px;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100px;
     }
 
     .logFaceAnim {
         transition: ease all 0.5s;
-        transform : translateX(0);
+        transform: translateX(0);
     }
 
     #faceLogin input {
@@ -217,12 +223,21 @@
 </body>
 
 <script type="text/javascript" src="./js/fun/md5.js"></script>
+<script type="text/javascript" src="./js/fun/GetCooKie.js"></script>
 <script>
     // 匿名函数，用于实现节气图随机
     (function () {
         const bodyEl = document.body;
         bodyEl.style.backgroundImage = 'url(./img/节气' + (Math.round(Math.random() * 11 + 1)) + '.png';
-    }())
+    }());
+
+    // 获取COOKIE
+    (function () {
+        if (cookie.get('id') != ''
+            && cookie.get('id') != null) {
+            window.location.href = './page/panel.html';
+        }
+    }());
 
     const log = {
         /**
@@ -231,18 +246,18 @@
         // 操作状态，0为登录，1为注册
         state: 0,
         // 登录相关元素
-        logup       : document.getElementById('logup'),
-        login       : document.getElementById('login'),
-        interface   : document.getElementById('interface'),
-        faceLogup   : document.getElementById('faceLogup'),
-        faceLogin   : document.getElementById('faceLogin'),
+        logup: document.getElementById('logup'),
+        login: document.getElementById('login'),
+        interface: document.getElementById('interface'),
+        faceLogup: document.getElementById('faceLogup'),
+        faceLogin: document.getElementById('faceLogin'),
         logSelectBar: document.getElementById('logSelectBar'),
-        forget      : document.getElementById('forget'),
-        whatCode    : document.getElementById('whatCode'),
-        logupSubmit : document.getElementById('logupSubmit'),
-        loginSubmit : document.getElementById('loginSubmit'),
-        formLogup   : document.getElementsByName('formLogup')[0],
-        formLogin   : document.getElementsByName('formLogin')[0],
+        forget: document.getElementById('forget'),
+        whatCode: document.getElementById('whatCode'),
+        logupSubmit: document.getElementById('logupSubmit'),
+        loginSubmit: document.getElementById('loginSubmit'),
+        formLogup: document.getElementsByName('formLogup')[0],
+        formLogin: document.getElementsByName('formLogin')[0],
         // AJAX对象
         ajaxObj: window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject('Microsoft.XMLHTTP'),
 
@@ -287,11 +302,13 @@
                     if (result != 'false') {
                         outTime = new Date();
                         outTime.setFullYear(outTime.getFullYear()
-                                            , outTime.getMonth()
-                                            , outTime.getDate() + 1);
+                            , outTime.getMonth()
+                            , outTime.getDate() + 1);
                         outTime.setHours(0, 0, 0);
-                        document.cookie = "id=" + result + ";expires=" + outTime.toString();
-                        document.cookie = "pswd=" + md5(formLogup.pswd.value) + ";expires=" + outTime.toString();
+                        //document.cookie = "id=" + result + ";expires=" + outTime.toString();
+                        //document.cookie = "pswd=" + md5(formLogup.pswd.value) + ";expires=" + outTime.toString();
+                        cookie.set('id', result, outTime.toString());
+                        cookie.set('pswd', md5(formLogup.pswd.value), outTime.toString());
                         window.location.href = './page/panel.html';
                         return;
                     }
@@ -304,13 +321,13 @@
             }
         },
         // 注册请求
-        loginRequest: function() {
+        loginRequest: function () {
             const m = formLogin;
             const ajaxObj = this.ajaxObj;
             ajaxObj.open('POST', './php/api/login.php');
             ajaxObj.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             ajaxObj.send('name=' + m.name.value + '&pswd=' + m.pswd.value + '&code=' + m.code.value);
-            ajaxObj.onreadystatechange = function() {
+            ajaxObj.onreadystatechange = function () {
                 if (this.readyState != 4) {
                     return;
                 }

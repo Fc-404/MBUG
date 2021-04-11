@@ -2,10 +2,26 @@
  * * page页功能js
  */
 
+
+/**
+ * * 用户信息
+ */
+const userInfo = new Vue({
+    data: {
+        id: 0,
+        name: '用户',
+        department: '仿真部特战组',
+        job: 'C++研发工程师',
+        mail: '',
+        senior: true,
+    }
+})
+
+
 /*
  * bar栏组件
  */
-var barItem = {
+const barItem = {
     template: '#barItem',
     props: ['info'],
 }
@@ -19,15 +35,21 @@ const barInfo = new Vue({
         activeWho: 0,
 
     },
+    methods: {
+        logout: function(){
+            cookie.set('id', '');
+            cookie.set('pswd', '');
+            window.location.href = '../';
+        },
+    },
     components: {
         'bar': barItem
     },
     watch: {
-        title: function() {
+        title: function () {
             document.title = this.title;
         }
     }
-
 })
 
 barInfo.items = [
@@ -68,24 +90,27 @@ barInfo.items = [
     },
     {
         id: 5,
-        name: '员工管理',
+        name: '部门管理',
+        icon: 'department.svg',
+        url: '',
+        senior: 1
+    },
+    {
+        id: 6,
+        name: '职员管理',
         icon: 'staff.svg',
         url: '',
         senior: 1
-    }
+    },
 ]
 
-/**
- * * 用户信息
- */
-var userInfo = new Vue({
-    el: '#page',
-    data: {
-        id: 0,
-        name: '',
-        department: '',
-        job: '',
-        mail: '',
-        senior: 1,
+
+/* 
+* body信息
+*/
+const bodyInfo = new Vue({
+    el: "#body",
+    date: {
+
     }
 })
