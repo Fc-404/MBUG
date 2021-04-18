@@ -18,7 +18,7 @@
         <bar v-if="userInfo.senior || !item.senior" v-for="item in items" :info="item"></bar>
         <div id="mine">
             <div style="height: 12px;"></div>
-            <div :class="{bar: true, barCurrent: activeWho == -1}" @click="activeWho = -1">
+            <div :class="{bar: true, fillet12: true, hover: true, hoverA: activeWho == -1}" @click="activeWho = -1">
                 <img src="../img/user.svg">
                 <span id="userName">{{ userInfo.name }}</span>
                 <span id="logout" @click="logout">注销</span>
@@ -28,7 +28,10 @@
     </div>
     <div id="body">
         <div id="setUser" class="items" v-show="barInfo.activeWho == -1">
-            mine
+            <div id="suHead">
+                <span>{{ userInfo.name }}，你好</span>
+                <span>个人中心</span>
+            </div>
         </div>
         <div id="allBUG" class="items" v-show="barInfo.activeWho == 0">
             {{ barInfo.items[0].name }}
@@ -56,8 +59,8 @@
 
 <!--选项栏模板-->
 <template id="barItem">
-    <div :class='{bar: true,
-         barCurrent: info.id == barInfo.activeWho ? true : false
+    <div :class='{bar: true, hover: true, fillet12: true,
+         hoverA: info.id == barInfo.activeWho ? true : false
          }'
          @click='barInfo.activeWho = info.id'>
         <img :src='"../img/" + info.icon'>

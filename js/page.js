@@ -9,7 +9,7 @@
 const userInfo = new Vue({
     data: {
         id: 0,
-        name: '用户',
+        name: '郭佳龙',
         department: '仿真部特战组',
         job: 'C++研发工程师',
         mail: '',
@@ -32,7 +32,7 @@ const barInfo = new Vue({
     data: {
         title: 'MBUG',
         items: [],
-        activeWho: 0,
+        activeWho: -1,
 
     },
     methods: {
